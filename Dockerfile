@@ -7,6 +7,7 @@ WORKDIR /app
 
 # Prefer not to run as root.
 USER deno
+RUN mkdir -p /app/files && chown -R deno /app/files
 
 RUN deno install
 
