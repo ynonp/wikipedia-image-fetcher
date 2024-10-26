@@ -4,10 +4,10 @@ FROM denoland/deno:2.0.3
 EXPOSE 8000
 
 WORKDIR /app
+RUN bash -c "mkdir -p /app/files && chown -R deno /app/files"
 
 # Prefer not to run as root.
 USER deno
-RUN mkdir -p /app/files && chown -R deno /app/files
 
 RUN deno install
 
