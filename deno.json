@@ -1,0 +1,14 @@
+{
+  "imports": {
+    "@std/fs": "jsr:@std/fs@^1.0.5",
+    "hono": "jsr:@hono/hono@^4.6.6",
+    "wikipedia": "npm:wikipedia@^2.1.2"
+  },
+  "tasks": {
+    "start": "deno run --allow-net main.ts"
+  },
+  "compilerOptions": {
+    "jsx": "precompile",
+    "jsxImportSource": "hono/jsx"
+  }
+}
