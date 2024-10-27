@@ -1,0 +1,20 @@
+services:
+  wikipedia-image-fetcher:
+    ports:
+      - 8000:8000
+    image: ynonp/wikipedia-image-fetcher:main
+    user: root
+    environment:
+      - WIKI_IMAGES_DOMAIN=files.spanishpanda.com
+    volumes:
+      - images:/app/files:rw
+
+  fileserver:
+    image: nginx
+    volumes:
+      - images:/usr/share/nginx/html:ro
+    ports:
+      - 8080:80
+
+volumes:
+  images:
